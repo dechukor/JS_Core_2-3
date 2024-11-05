@@ -8,11 +8,25 @@
  */
 
 const intersection = (firstObject, secondObject) => {
-    throw new Error(`Напишите здесь свое решение ${firstObject}, ${secondObject}`);
+    // throw new Error(`Напишите здесь свое решение ${firstObject}, ${secondObject}`);
+    const resultObject = {};
+
+    for (let keyFirstObj in firstObject) {
+        for (let keySecondObj in secondObject) {
+            if ((keyFirstObj === keySecondObj) && firstObject[keyFirstObj] === secondObject[keySecondObj]) {
+                resultObject[keyFirstObj] = firstObject[keyFirstObj];
+            }
+        }
+    }
+
+    return resultObject;
+
 };
 
 const data = {a: 1, b: 2};
-const data2 = {c: 1, b: 2};
+const data2 = {c: 1, b: 2, a: 1};
 console.log(intersection(data, data2)); // { b: 2 }
 
 module.exports = intersection;
+
+// РЕШЕНО
