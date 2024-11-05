@@ -26,3 +26,5 @@ console.log(worker.days); //выведет 31
 console.log(worker.getSalary()); //выведет 310 - то есть 10*31
 
 module.exports = Worker;
+
+// РЕШЕНО
