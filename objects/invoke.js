@@ -10,10 +10,20 @@
  */
 
 const invoke = (object, path, func, args) => {
-    throw new Error(`Напишите здесь свое решение ${object} ${path} ${func} ${args}`);
+    // throw new Error(`Напишите здесь свое решение ${object} ${path} ${func} ${args}`);
+    
+    if (typeof(args[0]) === 'string') {
+        return eval(`object.${path}.${func}('${args}')`);
+    } else {
+        return eval(`object.${path}.${func}(${args})`);
+    }
+
+    
 };
 
 const data = {a: {b: [1, 2, 3]}}
 console.log(invoke(data, 'a.b', 'splice', [1, 2])); // [2, 3]
 
 module.exports = invoke;
+
+// РАБОТАЕТ, НО НЕ ИДЕАЛЬНО
