@@ -26,4 +26,4 @@ console.log(invoke(data, 'a.b', 'splice', [1, 2])); // [2, 3]
 
 module.exports = invoke;
 
-// РАБОТАЕТ, НО НЕ ИДЕАЛЬНО
+// РЕШЕНО, НО НЕ ИДЕАЛЬНО
