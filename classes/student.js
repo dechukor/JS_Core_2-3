@@ -1,3 +1,4 @@
+// РЕШЕНО, ПРОВЕРИТЬ ТЕСТОМ
 /**
  * Реализуйте класс Student (Студент), который будет наследовать от класса User.
  * Этот класс должен иметь следующие свойства: name (имя, наследуется от User), surname (фамилия, наследуется от User), year (год поступления в вуз).
@@ -17,10 +18,18 @@ class User {
     }
 }
 
-class Student {
-    // Ваш код...
+class Student extends User {
+    constructor(name, surname, year) {
+      super(name,surname);
+      this.year = year;
+    }
+
+    getCourse() {
+      return currentDate.getFullYear() - this.year;       //извлекаем текущий год из текущей даты, вычитаем год поступления, возвращаем результат
+    }
 }
 
+const currentDate = new Date();                           //объект содержащий текущую дату
 const student = new Student('Иван', 'Иванов', 2020);
 
 console.log(student.name); //выведет 'Иван'
