@@ -17,7 +17,16 @@
  * @returns {number}
  */
 function metro(x, y) {
-    return undefined;
-}
+    let numAllStation = 13;
+    let numStationForvard = Math.abs(x - y) - 1;
+    let numStationBack = (numAllStation - 2) - numStationForvard;
+    
+    if (numStationForvard < numStationBack) {
+        return numStationForvard;
+    } else {
+        return numStationBack;
+    }
+    
+  }
 
 module.exports = metro;
