@@ -10,7 +10,31 @@
  * @returns {string}
  */
 function rle(value) {
-    return undefined;
+
+    const arrLetters = value.split('');
+    let result = '';
+
+    let i = 0;
+    while (i < arrLetters.length) {        
+        let qtyLetters = 1;
+        
+        let j = i + 1;        
+        while (arrLetters[j] === arrLetters[i]) {
+            qtyLetters++;
+            j++;
+        }
+
+        if (qtyLetters === 1) {
+            result += arrLetters[i];
+            i++;
+        } else {
+            result += qtyLetters + arrLetters[i];
+            i += qtyLetters;
+        }
+    }
+
+    return result;
 }
+
 
 module.exports = rle;
