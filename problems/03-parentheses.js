@@ -1,3 +1,5 @@
+//РЕШЕНО
+
 /**
  * Строка со скобками считается валидной, если на каждую закрывающую скобку имеется ранее открытая
  * и на каждую ранее открытую имеется закрывающая.
@@ -16,7 +18,18 @@
  * @returns {boolean}
  */
 function parentheses(value) {
-    return undefined;
+    if (value === '') {
+        return false;
+    }
+    
+    let valAfterDel = '';
+
+    while (valAfterDel !== value){
+        valAfterDel = value;      
+        value = value.replaceAll('()', '');
+    }    
+
+    return valAfterDel === '';
 }
 
 module.exports = parentheses;
