@@ -12,7 +12,20 @@
  * @returns {boolean}
  */
 function parentheses(value) {
-    return undefined;
+    if (value === '') {
+        return false;
+    }
+    
+    let valAfterDel = '';
+
+    while (valAfterDel !== value){
+        valAfterDel = value;      
+        value = value.replaceAll('()', '');
+        value = value.replaceAll('{}', '');
+        value = value.replaceAll('<>', '');
+    }    
+
+    return valAfterDel === '';
 }
 
 module.exports = parentheses;
