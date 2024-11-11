@@ -1,3 +1,4 @@
+//РЕШЕНО
 /**
  * Описание задачи: Напишите функцию, которая возвращает вложенный массив вида `[[key, value], [key, value]]`.
  * Ожидаемый результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
@@ -5,8 +6,9 @@
  * @returns {Array} - вложенный массив
  */
 
-export const makePairs = (object) => {
-    throw new Error(`Напишите здесь свое решение ${object}`);
+const makePairs = (object) => {
+    // throw new Error(`Напишите здесь свое решение ${object}`);
+    return Object.entries(object);
 };
 
 const data = { a: 1, b: 2 };

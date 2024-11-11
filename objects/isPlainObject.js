@@ -15,7 +15,6 @@ const isPlainObject = (element) => {
     }
 
     return false;
-
 };
 
 const data = { a: 1 };
