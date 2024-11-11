@@ -22,7 +22,23 @@
  * @returns {boolean}
  */
 function hasCircularDependency(servicesMap) {
+    
+    let arrKeys = [...new Set(Object.keys(servicesMap))];
+    let arrValues = [...new SetObject.values(servicesMap)];
+    
+    console.log(arrKeys);
+    console.log(arrValues);
+    
+    
     return false;
 }
+
+let servicesMap
+
+console.log(hasCircularDependency({
+      http: ['dogsApi'],
+      apiClient: ['http'],
+      dogsApi: ['apiClient'],
+     }));
 
 module.exports = hasCircularDependency;
