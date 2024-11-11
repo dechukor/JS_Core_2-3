@@ -1,3 +1,4 @@
+//РЕШЕНО
 /**
 
  * Описание задачи: Напишите функцию, которая проверяет, является ли элемент именно простым объектом, а не массивом, null
@@ -7,9 +8,16 @@
  * @returns {boolean}
  */
 
-export const isPlainObject = (element) => {
-    throw new Error(`Напишите здесь свое решение ${element}`);
+const isPlainObject = (element) => {
+    // throw new Error(`Напишите здесь свое решение ${element}`);
+    if (typeof(element) === 'object' && !Array.isArray(element)){
+        return true;
+    }
+
+    return false;
+
 };
 
 const data = { a: 1 };
+
 console.log(isPlainObject(data)); // true

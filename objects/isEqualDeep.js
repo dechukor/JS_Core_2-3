@@ -6,8 +6,20 @@
  * @param {Object} secondObj - Объект с любыми значениями
  * @returns {boolean}
  */
-export const isEqualDeep = (element) => {
-    throw new Error(`Напишите здесь свое решение ${element}`);
+const isEqualDeep = (firstObject, secondObject) => {
+    // throw new Error(`Напишите здесь свое решение ${element}`);
+    if (Object.values(firstObject).length !== Object.values(secondObject).length) {
+        return false;
+    }
+
+
+
+    console.log(Object.entries(firstObject));
+    console.log(Object.entries(secondObject).flat().join(''));
+    return Object.entries(firstObject).flat().join('') === Object.entries(secondObject).flat().join('');
+    
+    
+
 };
 const data = {a: 1, b: {c: 1}};
 const data2 = {a: 1, b: {c: 1}};
