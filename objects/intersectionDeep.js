@@ -29,6 +29,6 @@ const data = {a: 1, b: {c: 3}};
 const data2 = {c: 1, b: {c: 3}};
 console.log(intersectionDeep(data, data2)); // { b: { c: 3 } }
 
-// module.exports = intersectionDeep;
+module.exports = intersectionDeep;
 
 // НЕРЕШЕНО
