@@ -1,3 +1,4 @@
+//РЕШЕНО
 /**
 
  * Описание задачи: Напишите функцию, которая поверхностно сравнивает два объекта.
@@ -7,8 +8,13 @@
  * @returns {boolean}
  */
 
-export const isEqual = (firstObject, secondObject) => {
-    throw new Error(`Напишите здесь свое решение ${firstObject} ${secondObject}`);
+const isEqual = (firstObject, secondObject) => {
+    // throw new Error(`Напишите здесь свое решение ${firstObject} ${secondObject}`);
+    if (Object.values(firstObject).length !== Object.values(secondObject).length) {
+        return false;
+    }
+
+    return Object.entries(firstObject).flat().join('') === Object.entries(secondObject).flat().join('');
 };
 
 const data = {a: 1, b: 1};
