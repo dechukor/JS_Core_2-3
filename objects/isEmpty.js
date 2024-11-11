@@ -9,8 +9,15 @@
  * @returns {boolean}
  */
 
-export const isEmpty = (object) => {
-    throw new Error(`Напишите здесь свое решение ${object}`);
+const isEmpty = (object) => {
+
+    for (key in object) {
+        if (object[key]) {
+            return false;
+        }
+    }
+
+    return true;
 };
 
 const data = {a: 1, b: undefined};
