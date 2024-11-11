@@ -22,15 +22,15 @@
  * @returns {boolean}
  */
 function hasCircularDependency(servicesMap) {
+
+    if (Object.keys(servicesMap).length === 0) {
+        return false;
+    } 
     
-    let arrKeys = [...new Set(Object.keys(servicesMap))];
-    let arrValues = [...new SetObject.values(servicesMap)];
+    let strKeys = [...new Set(Object.keys(servicesMap).sort())].join('');
+    let strValues = [...new Set(Object.values(servicesMap).flat().sort())].join('');
     
-    console.log(arrKeys);
-    console.log(arrValues);
-    
-    
-    return false;
+    return strKeys === strValues;
 }
 
 let servicesMap
