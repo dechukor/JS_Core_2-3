@@ -48,4 +48,6 @@ function timeago(seconds) {
         all !== 1 ? date : date.slice(0, -1)
     } ago`;
 
+}
+
 module.exports = timeago;
